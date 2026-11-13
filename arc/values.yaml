@@ -1,0 +1,22 @@
+runner:
+  githubConfigUrl: https://github.com/KarafrOrg
+  githubConfigSecret: arc-github-app
+  controllerServiceAccount:
+    name: arc-controller
+    namespace: arc-system
+  minRunners: 0
+  maxRunners: 5
+  containerMode:
+    type: dind
+
+externalSecret:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: arc-secrets
+    kind: ClusterSecretStore
+  appId:
+    key: github-actions-arc-app-id
+  installationId:
+    key: github-actions-arc-installation-id
+  privateKey:
+    key: github-actions-arc-private-key

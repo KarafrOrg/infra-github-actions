@@ -1,0 +1,11 @@
+apiVersion: v2
+name: arc-dind
+description: ARC Docker-in-Docker runner scale set with GitHub App credentials from External Secrets
+type: application
+version: 0.1.0
+appVersion: "0.15.1"
+dependencies:
+  - name: gha-runner-scale-set
+    alias: runner
+    version: 0.15.1
+    repository: oci://ghcr.io/actions/actions-runner-controller-charts

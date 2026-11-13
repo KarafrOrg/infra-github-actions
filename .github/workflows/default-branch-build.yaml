@@ -1,0 +1,14 @@
+name: Default branch (Build)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  helm-lint:
+    name: Helm lint
+    uses: ./.github/workflows/helm-lint.yaml
