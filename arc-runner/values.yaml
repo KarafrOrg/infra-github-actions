@@ -1,6 +1,7 @@
 runner:
   githubConfigUrl: https://github.com/KarafrOrg
   githubConfigSecret: arc-github-app
+  runnerScaleSetName: self-hosted
   controllerServiceAccount:
     name: arc-controller
     namespace: infra-github-actions
