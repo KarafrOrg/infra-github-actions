@@ -12,7 +12,7 @@ runner:
 externalSecret:
   refreshInterval: 1h
   secretStoreRef:
-    name: arc-secrets
+    name: gcp-cluster-secret-store
     kind: ClusterSecretStore
   appId:
     key: github-actions-arc-app-id
