@@ -10,7 +10,12 @@ updates:
           - "*"
 
   - package-ecosystem: helm
-    directory: /arc
+    directories:
+      - /arc-runner
+      - /arc-controller
     schedule:
       interval: weekly
-
+    groups:
+      arc-charts:
+        patterns:
+          - "gha-runner-scale-set*"

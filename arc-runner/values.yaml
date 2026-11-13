@@ -3,7 +3,7 @@ runner:
   githubConfigSecret: arc-github-app
   controllerServiceAccount:
     name: arc-controller
-    namespace: arc-system
+    namespace: infra-github-actions
   minRunners: 0
   maxRunners: 5
   containerMode:

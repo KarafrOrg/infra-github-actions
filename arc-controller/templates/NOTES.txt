@@ -1,0 +1,3 @@
+The ARC controller runs in namespace {{ .Release.Namespace }}.
+Set runner.controllerServiceAccount.namespace to this namespace in the runner chart.
+Wait for the ARC CRDs to be established before installing the runner chart.

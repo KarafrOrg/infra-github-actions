@@ -1,5 +1,5 @@
 apiVersion: v2
-name: arc-dind
+name: arc-runner-dind
 description: ARC Docker-in-Docker runner scale set with GitHub App credentials from External Secrets
 type: application
 version: 0.1.0

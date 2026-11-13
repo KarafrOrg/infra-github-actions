@@ -9,6 +9,9 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        chart: [arc-controller, arc-runner]
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -17,8 +20,8 @@ jobs:
         with:
           version: v3.17.3
       - name: Build dependencies
-        run: helm dependency build arc --skip-refresh
+        run: helm dependency build "${{ matrix.chart }}" --skip-refresh
       - name: Lint chart
-        run: helm lint arc --strict
+        run: helm lint "${{ matrix.chart }}" --strict
       - name: Render chart
-        run: helm template arc-dind arc --namespace arc-runners > /dev/null
+        run: helm template "${{ matrix.chart }}" "${{ matrix.chart }}" --namespace infra-github-actions --include-crds > /dev/null
